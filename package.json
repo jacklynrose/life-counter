@@ -1,0 +1,19 @@
+{
+  "name": "life-counter",
+  "version": "1.0.0",
+  "description": "Simple life counter",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacklynrose/life-counter.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacklynrose/life-counter/issues"
+  },
+  "homepage": "https://github.com/jacklynrose/life-counter#readme"
+}
