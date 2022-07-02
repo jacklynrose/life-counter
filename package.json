@@ -4,7 +4,8 @@
   "description": "Simple life counter",
   "main": "index.html",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jacklynrose/life-counter/issues"
   },
-  "homepage": "https://github.com/jacklynrose/life-counter#readme"
+  "homepage": "https://github.com/jacklynrose/life-counter#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }
