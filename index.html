@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Counter</title>
+  </head>
+  <body>
+    <main>
+      <h1>Life Counter</h1>
+      <div id="player-one">
+        <h2>Player One</h2>
+        <p>Life: <span id="player-one-life">0</span></p>
+        <div class="controls">
+          <input
+            type="number"
+            id="player-one-input"
+            min="0"
+            placeholder="Amount to..."
+          />
+          <button id="player-one-damage">Damage</button>
+          <button id="player-one-heal">Heal</button>
+        </div>
+      </div>
+      <div id="player-two">
+        <h2>Player Two</h2>
+        <p>Life: <span id="player-two-life">0</span></p>
+        <div class="controls">
+          <input
+            type="number"
+            id="player-one-input"
+            min="0"
+            placeholder="Amount to..."
+          />
+          <button id="player-one-damage">Damage</button>
+          <button id="player-one-heal">Heal</button>
+        </div>
+      </div>
+      <div id="settings">
+        <h2>Settings</h2>
+        <div class="field">
+          <label for="player-one-name">Player One Name</label>
+          <input type="text" id="player-one-name" />
+        </div>
+        <div class="field">
+          <label for="player-two-name">Player Two Name</label>
+          <input type="text" id="player-two-name" />
+        </div>
+        <div class="field">
+          <label for="player-starting-life">Starting Life</label>
+          <input type="number" id="player-starting-life" />
+        </div>
+        <button id="start-game">Start Game</button>
+      </div>
+    </main>
+  </body>
+</html>
