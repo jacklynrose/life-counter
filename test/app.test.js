@@ -1,4 +1,4 @@
-const { createGame } = require("../src/app");
+const { createGame, playerLife } = require("../src/app");
 
 describe("Life Counter", () => {
   describe("Creating a game", () => {
@@ -53,6 +53,17 @@ describe("Life Counter", () => {
           life: 10,
         },
       });
+    });
+  });
+  describe("Asking a player's status", () => {
+    it("returns the player's life", () => {
+      const game = createGame({
+        playerOne: "Jacklyn",
+        playerTwo: "Yasmin",
+        startingLifeValue: 10,
+      });
+      expect(playerLife(game.playerOne)).toEqual(10);
+      expect(playerLife(game.playerTwo)).toEqual(10);
     });
   });
 });

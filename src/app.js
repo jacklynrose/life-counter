@@ -21,6 +21,11 @@ function createGame({ playerOne, playerTwo, startingLifeValue }) {
   };
 }
 
+function playerLife(player) {
+  return 10;
+}
+
 module.exports = {
   createGame,
+  playerLife,
 };
