@@ -28,12 +28,19 @@ function playerLife(player) {
   return player.life;
 }
 
+function maxDamage(player, damage) {
+  if (player.life <= damage) {
+    return player.life;
+  }
+  return damage;
+}
+
 function damagePlayer(game, player, damage) {
   return {
     ...game,
     [player]: {
       ...game[player],
-      life: game[player].life - damage,
+      life: game[player].life - maxDamage(game[player], damage),
     },
   };
 }

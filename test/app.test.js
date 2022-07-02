@@ -93,4 +93,16 @@ describe("Life Counter", () => {
       expect(playerLife(gameAfterPlayerTwoDamaged.playerTwo)).toEqual(8);
     });
   });
+
+  it("should not go below 0", () => {
+    const game = createGame({
+      playerOne: "Jacklyn",
+      playerTwo: "Yasmin",
+      startingLifeValue: 10,
+    });
+
+    const gameAfterPlayerOneDamaged = damagePlayer(game, PLAYER_ONE, 11);
+    expect(playerLife(gameAfterPlayerOneDamaged.playerOne)).toEqual(0);
+    expect(playerLife(gameAfterPlayerOneDamaged.playerTwo)).toEqual(10);
+  });
 });
