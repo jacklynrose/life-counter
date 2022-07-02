@@ -45,10 +45,44 @@ function damagePlayer(game, player, damage) {
   };
 }
 
-module.exports = {
-  PLAYER_ONE,
-  PLAYER_TWO,
-  createGame,
-  playerLife,
-  damagePlayer,
-};
+function render() {
+  const playerOneLabel = document.querySelector("#player-one h2");
+  const playerTwoLabel = document.querySelector("#player-two h2");
+  const playerOneLife = document.querySelector("#player-one p");
+  const playerTwoLife = document.querySelector("#player-two p");
+
+  playerOneLabel.innerText = window.game.playerOne.name;
+  playerTwoLabel.innerText = window.game.playerTwo.name;
+  playerOneLife.innerText = `Life: ${window.game.playerOne.life}`;
+  playerTwoLife.innerText = `Life: ${window.game.playerTwo.life}`;
+}
+
+function handleNewGame() {
+  const playerOne = document.getElementById("player-one-name").value;
+  const playerTwo = document.getElementById("player-two-name").value;
+  const startingLifeValue = document.getElementById(
+    "player-starting-life"
+  ).value;
+  window.game = createGame({
+    playerOne,
+    playerTwo,
+    startingLifeValue,
+  });
+  render();
+}
+
+if (typeof window !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .getElementById("start-game")
+      .addEventListener("click", handleNewGame);
+  });
+} else {
+  module.exports = {
+    PLAYER_ONE,
+    PLAYER_TWO,
+    createGame,
+    playerLife,
+    damagePlayer,
+  };
+}
