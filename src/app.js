@@ -79,6 +79,14 @@ function handlePlayerOneDamage() {
   render();
 }
 
+function handlePlayerTwoDamage() {
+  const playerTwoInput = parseInt(
+    document.getElementById("player-two-input").value
+  );
+  window.game = damagePlayer(window.game, PLAYER_TWO, playerTwoInput);
+  render();
+}
+
 if (typeof window !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
     document
@@ -87,6 +95,9 @@ if (typeof window !== "undefined") {
     document
       .getElementById("player-one-damage")
       .addEventListener("click", handlePlayerOneDamage);
+    document
+      .getElementById("player-two-damage")
+      .addEventListener("click", handlePlayerTwoDamage);
   });
 } else {
   module.exports = {
