@@ -5,7 +5,7 @@ function createGame({ playerOne, playerTwo, startingLifeValue }) {
   if (!playerTwo) {
     throw new Error("You must provide a player 2 name");
   }
-  if (!startingLifeValue) {
+  if (!startingLifeValue || startingLifeValue < 1) {
     throw new Error("You must provide a starting life value");
   }
 }
