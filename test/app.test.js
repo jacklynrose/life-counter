@@ -17,5 +17,14 @@ describe("Life Counter", () => {
         createGame({ playerOne, playerTwo });
       }).toThrow("You must provide a player 2 name");
     });
+
+    it("throws an error if you try to start the game without a starting life value", () => {
+      const playerOne = "Jacklyn";
+      const playerTwo = "Yasmin";
+      const startingLifeValue = undefined;
+      expect(() => {
+        createGame({ playerOne, playerTwo, startingLifeValue });
+      }).toThrow("You must provide a starting life value");
+    });
   });
 });
