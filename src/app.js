@@ -1,3 +1,6 @@
+const PLAYER_ONE = "playerOne";
+const PLAYER_TWO = "playerTwo";
+
 function createGame({ playerOne, playerTwo, startingLifeValue }) {
   if (!playerOne) {
     throw new Error("You must provide a player 1 name");
@@ -22,10 +25,23 @@ function createGame({ playerOne, playerTwo, startingLifeValue }) {
 }
 
 function playerLife(player) {
-  return 10;
+  return player.life;
+}
+
+function damagePlayer(game, player, damage) {
+  return {
+    ...game,
+    [player]: {
+      ...game[player],
+      life: game[player].life - damage,
+    },
+  };
 }
 
 module.exports = {
+  PLAYER_ONE,
+  PLAYER_TWO,
   createGame,
   playerLife,
+  damagePlayer,
 };

@@ -1,4 +1,10 @@
-const { createGame, playerLife } = require("../src/app");
+const {
+  createGame,
+  playerLife,
+  damagePlayer,
+  PLAYER_ONE,
+  PLAYER_TWO,
+} = require("../src/app");
 
 describe("Life Counter", () => {
   describe("Creating a game", () => {
@@ -64,6 +70,27 @@ describe("Life Counter", () => {
       });
       expect(playerLife(game.playerOne)).toEqual(10);
       expect(playerLife(game.playerTwo)).toEqual(10);
+    });
+  });
+  describe("Damaging a player", () => {
+    it("should damage the player", () => {
+      const game = createGame({
+        playerOne: "Jacklyn",
+        playerTwo: "Yasmin",
+        startingLifeValue: 10,
+      });
+
+      const gameAfterPlayerOneDamaged = damagePlayer(game, PLAYER_ONE, 5);
+      expect(playerLife(gameAfterPlayerOneDamaged.playerOne)).toEqual(5);
+      expect(playerLife(gameAfterPlayerOneDamaged.playerTwo)).toEqual(10);
+
+      const gameAfterPlayerTwoDamaged = damagePlayer(
+        gameAfterPlayerOneDamaged,
+        PLAYER_TWO,
+        2
+      );
+      expect(playerLife(gameAfterPlayerTwoDamaged.playerOne)).toEqual(5);
+      expect(playerLife(gameAfterPlayerTwoDamaged.playerTwo)).toEqual(8);
     });
   });
 });
