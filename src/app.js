@@ -71,11 +71,22 @@ function handleNewGame() {
   render();
 }
 
+function handlePlayerOneDamage() {
+  const playerOneInput = parseInt(
+    document.getElementById("player-one-input").value
+  );
+  window.game = damagePlayer(window.game, PLAYER_ONE, playerOneInput);
+  render();
+}
+
 if (typeof window !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
     document
       .getElementById("start-game")
       .addEventListener("click", handleNewGame);
+    document
+      .getElementById("player-one-damage")
+      .addEventListener("click", handlePlayerOneDamage);
   });
 } else {
   module.exports = {
